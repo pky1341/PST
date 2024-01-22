@@ -1,4 +1,19 @@
 $(document).ready(function () {
+    $("#regBtn").click(function () {
+        $("#name").val("");
+        $("#village").val("");
+        $("#tehsil").val("");
+        $("#dis").val("");
+        $("#state").val("");
+        $("#dob").val("");
+        $("#bloodgroup").val("");
+        $("#edu").val("");
+        $("#job").val("");
+        $("#rel").val("");
+        $("#cast").val("");
+        $("#subcast").val("");
+    });
+
     var pattern = /^[a-zA-Z\s]+$/;
     $("#nameErr").hide();
     let nameError = true;
@@ -412,11 +427,11 @@ $(document).ready(function () {
                 },
                 data: formData,
                 success: function (data) {
-                    alert(data);
+                    alert(data.success);
+                    $("#modalRegisterForm").hide();
                 },
             });
         } else {
-            alert("Please fill all the fields");
             return false;
         }
     });
