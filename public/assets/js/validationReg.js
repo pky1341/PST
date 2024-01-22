@@ -376,19 +376,19 @@ $(document).ready(function () {
             castError == true &&
             subcastError == true
         ) {
-            var route = $("#routeToContact").data('route');
-            const name=$('#name').val();
-            const village=$('#village').val();
-            const tehsil=$('#tehsil').val();
-            const dis=$('#dis').val();
-            const state=$('#state').val();
-            const dob=$('#dob').val();
-            const blood=$('#bloodgroup').val();
-            const edu=$('#edu').val();
-            const job=$('#job').val();
-            const rel=$('#rel').val();
-            const cast=$('#cast').val();
-            const subcast=$('#subcast').val();
+            var route = $("#routeToContact").data("route");
+            const name = $("#name").val();
+            const village = $("#village").val();
+            const tehsil = $("#tehsil").val();
+            const dis = $("#dis").val();
+            const state = $("#state").val();
+            const dob = $("#dob").val();
+            const blood = $("#bloodgroup").val();
+            const edu = $("#edu").val();
+            const job = $("#job").val();
+            const rel = $("#rel").val();
+            const cast = $("#cast").val();
+            const subcast = $("#subcast").val();
             const formData = {
                 name: name,
                 village: village,
@@ -404,13 +404,17 @@ $(document).ready(function () {
                 subcast: subcast,
             };
             $.ajax({
-                type: 'POST',
+                type: "POST",
                 url: route,
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+                        "content"
+                    ),
+                },
                 data: formData,
                 success: function (data) {
                     alert(data);
-                }
+                },
             });
         } else {
             alert("Please fill all the fields");
