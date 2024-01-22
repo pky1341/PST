@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .container {
@@ -30,6 +31,7 @@
             font-size: 1.5rem;
             margin: 10px;
         }
+
         #loginBtn {
             padding: 1em 2em;
             border: none;
@@ -138,36 +140,49 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="">
+                <form id="routeToContact" data-route="{{ route('store') }}">
+                    @csrf
                     <div class="modal-body mx-3">
                         <div class="md-form mb-2 d-flex">
                             <div class="">
                                 <label data-error="wrong" data-success="right" for="name">Name</label>
-                                <input type="text" id="name" class="form-control validate" required>
+                                <input type="text" id="name" name="name" class="form-control validate" required>
+                                <span id="nameErr"
+                                    style="color: rgb(181, 19, 19);font-size: small; background-color: bisque;"></span>
                             </div>
                             <div class="ms-2">
                                 <label data-error="wrong" data-success="right" for="town">Village</label>
-                                <input type="text" id="town" class="form-control validate" required>
+                                <input type="text" id="village" name="village" class="form-control validate" required>
+                                <span id="villageErr"
+                                    style="color: rgb(181, 19, 19);font-size: small; background-color: bisque; "></span>
                             </div>
                         </div>
                         <div class="md-form mb-2 d-flex">
                             <div>
                                 <label data-error="wrong" data-success="right" for="tehsil">Tehsil</label>
-                                <input type="text" id="tehsil" class="form-control validate" required>
+                                <input type="text" id="tehsil" name="tehsil" class="form-control validate" required>
+                                <span id="tehsilErr"
+                                    style="color: rgb(181, 19, 19);font-size: small; background-color: bisque;"></span>
                             </div>
                             <div class="ms-2">
                                 <label data-error="wrong" data-success="right" for="dis">District</label>
-                                <input type="text" id="dis" class="form-control validate" required>
+                                <input type="text" id="dis" name="dis" class="form-control validate" required>
+                                <span id="disErr"
+                                    style="color: rgb(181, 19, 19);font-size: small; background-color: bisque;"></span>
                             </div>
                         </div>
                         <div class="md-form mb-2 d-flex">
                             <div class="">
                                 <label data-error="wrong" data-success="right" for="state">State</label>
-                                <input type="text" id="state" class="form-control validate" required>
+                                <input type="text" id="state" name="state" class="form-control validate" required>
+                                <span id="stateErr"
+                                    style="color: rgb(181, 19, 19);font-size: small; background-color: bisque;"></span>
                             </div>
                             <div class="ms-2">
                                 <label data-error="wrong" data-success="right" for="dob">Date Of Birth</label>
-                                <input type="date" id="dob" class="form-control validate" required>
+                                <input type="date" id="dob" name="dob" class="form-control validate" required>
+                                <span id="dobErr"
+                                    style="color: rgb(181, 19, 19);font-size: small; background-color: bisque;"></span>
                             </div>
                         </div>
                         <div class="md-form mb-2 d-flex">
@@ -184,10 +199,14 @@
                                     <option value="O+">O+</option>
                                     <option value="O-">O-</option>
                                 </select>
+                                <span id="bloodErr"
+                                    style="color: rgb(181, 19, 19);font-size: small;background-color: bisque;"></span>
                             </div>
                             <div class="ms-2">
                                 <label data-error="wrong" data-success="right" for="edu">Highest Education</label>
-                                <input type="text" id="edu" class="form-control validate" required>
+                                <input type="text" id="edu" name="edu" class="form-control validate" required>
+                                <span id="eduErr"
+                                    style="color: rgb(181, 19, 19);font-size: small;background-color: bisque;"></span>
                             </div>
                         </div>
                         <div class="md-form mb-2 d-flex">
@@ -200,25 +219,34 @@
                                     <option value="BUSINESS">BUSINESS</option>
                                     <option value="LABOUR">LABOUR</option>
                                 </select>
+                                <span id="jobErr"
+                                    style="color: rgb(181, 19, 19);font-size: small; background-color: bisque;"></span>
                             </div>
                             <div class="ms-2">
                                 <label data-error="wrong" data-success="right" for="rel">RELIGION</label>
-                                <input type="text" id="rel" class="form-control validate" required>
+                                <input type="text" id="rel" name="rel" class="form-control validate" required>
+                                <span id="relErr"
+                                    style="color: rgb(181, 19, 19);font-size: small; background-color: bisque;"></span>
                             </div>
                         </div>
                         <div class="md-form mb-2 d-flex">
                             <div>
                                 <label data-error="wrong" data-success="right" for="cast">CAST</label>
-                                <input type="text" id="cast" class="form-control validate" required>
+                                <input type="text" id="cast" name="cast" class="form-control validate" required>
+                                <span id="castErr"
+                                    style="color: rgb(181, 19, 19);font-size: small; background-color: bisque;"></span>
                             </div>
                             <div class="ms-2">
                                 <label data-error="wrong" data-success="right" for="subcst">SUB CAST</label>
-                                <input type="text" id="subcst" class="form-control validate" required>
+                                <input type="text" id="subcast" name="subcast" class="form-control validate" required>
+                                <span id="subcastErr"
+                                    style="color: rgb(181, 19, 19);font-size: small; background-color: bisque;"></span>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
-                        <button class="btn btn-deep-orange" style="background-color: aqua;">Sign up</button>
+                        <button class="btn btn-deep-orange" style="background-color: aqua;" type="button" id="submit"
+                            name="submit">Sign up</button>
                     </div>
                 </form>
             </div>
@@ -229,5 +257,7 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('assets/js/one.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="{{ asset('assets/js/validationReg.js') }}"></script>
 
 </html>

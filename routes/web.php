@@ -15,4 +15,5 @@ use App\Http\Controllers\PSTController;
 |
 */
 
-Route::get("/",[PSTController::class,"first"]);
+Route::get("/",[PSTController::class,"first"])->name('first');
+Route::post('/store',[PSTController::class,'store'])->name('store');
