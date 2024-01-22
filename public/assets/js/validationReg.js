@@ -349,7 +349,6 @@ $(document).ready(function () {
         }
     }
     $("#submit").click(function () {
-        e.preventDefault();
         validateName();
         validateVillage();
         validateTehsil();
