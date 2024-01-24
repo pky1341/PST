@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PSTController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,6 @@ use App\Http\Controllers\PSTController;
 
 Route::get("/",[PSTController::class,"first"])->name('first');
 Route::post('/store',[PSTController::class,'store'])->name('store');
+Route::get('/admin/login',[AdminController::class,'adminLogin'])->name('adminLogin');
+Route::get('/admin/register',[AdminController::class,'adminReg'])->name('adminReg');
+Route::get('/admin/dashboard',[AdminController::class,'adminDash'])->name('adminDash');
