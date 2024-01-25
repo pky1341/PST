@@ -264,7 +264,7 @@ $(document).ready(function () {
             return false;
         } else {
             $("#jobErr").hide();
-            bloodError = true;
+            jobError = true;
             return true;
         }
     }
@@ -363,6 +363,240 @@ $(document).ready(function () {
             return true;
         }
     }
+    $("#marryErr").hide();
+    let marryError = true;
+    $("#marry").keyup(function () {
+        validateMarry();
+    });
+    function validateMarry() {
+        let marry = $("#marry").val();
+        if (marry == "") {
+            $("#marryErr").show();
+            $("#marryErr").html("***Marital status selection is required");
+            marryError = false;
+            return false;
+        } else {
+            $("#marryErr").hide();
+            marryError = true;
+            return true;
+        }
+    }
+    $("#famErr").hide();
+    let famError = true;
+    $("#fam").keyup(function () {
+        validateFamily();
+    });
+    function validateFamily() {
+        let fam = $("#fam").val().trim();
+        if (fam == "") {
+            $("#famErr").show();
+            $("#famErr").html("***Family Member is required");
+            famError = false;
+            return false;
+        } else if (fam.length >= 3) {
+            $("#famErr").show();
+            $("#famErr").html("***Family Member should be at least 2 digits");
+            famError = false;
+            return false;
+        } else if (fam == 0) {
+            $("#famErr").show();
+            $("#famErr").html("***please enter a valid digits");
+            famError = false;
+            return false;
+        } else {
+            $("#famErr").hide();
+            famError = true;
+            return true;
+        }
+    }
+    $("#rcTypeErr").hide();
+    let rcTypeError = true;
+    $("#rcType").keyup(function () {
+        validateRcType();
+    });
+    function validateRcType() {
+        let rcType = $("#rcType").val();
+        if (rcType == "") {
+            $("#rcTypeErr").show();
+            $("#rcTypeErr").html("***Religion is required");
+            rcTypeError = false;
+            return false;
+        } else {
+            $("#rcTypeErr").hide();
+            rcTypeError = true;
+            return true;
+        }
+    }
+    $("#aadharErr").hide();
+    let aadharError = true;
+    $("#aadhar").keyup(function () {
+        validateAadhar();
+    });
+    function validateAadhar() {
+        let aadhar = $("#aadhar").val().trim();
+        if (aadhar == "") {
+            $("#aadharErr").show();
+            $("#aadharErr").html("***Aadhar Number is required");
+            aadharError = false;
+            return false;
+        } else if (aadhar.length !== 12) {
+            $("#aadharErr").show();
+            $("#aadharErr").html("***Aadhar Number should be 12 digits");
+            aadharError = false;
+            return false;
+        } else if (!/^\d+$/.test(aadhar)) {
+            $("#aadharErr").show();
+            $("#aadharErr").html(
+                "***Aadhar Number should contain only numeric digits"
+            );
+            aadharError = false;
+            return false;
+        } else {
+            $("#aadharErr").hide();
+            aadharError = true;
+            return true;
+        }
+    }
+    $("#agrErr").hide();
+    let agrError = true;
+    $("#agr").keyup(function () {
+        validateAgr();
+    });
+    function validateAgr() {
+        let agr = $("#agr").val();
+        if (agr == "") {
+            $("#agrErr").show();
+            $("#agrErr").html("***Agreculture selection is required");
+            agrError = false;
+            return false;
+        } else {
+            $("#agrErr").hide();
+            agrError = true;
+            return true;
+        }
+    }
+    $("#plotErr").hide();
+    let plotError = true;
+    $("#plot").keyup(function () {
+        validatePlot();
+    });
+    function validatePlot() {
+        let plot = $("#plot").val();
+        if (plot == "") {
+            $("#plotErr").show();
+            $("#plotErr").html("***Plot Selection is required");
+            plotError = false;
+            return false;
+        } else {
+            $("#plotErr").hide();
+            plotError = true;
+            return true;
+        }
+    }
+    $("#cycleErr").hide();
+    let cycleError = true;
+    $("#cycle").keyup(function () {
+        validateCycle();
+    });
+    function validateCycle() {
+        let cycle = $("#cycle").val();
+        if (cycle == "") {
+            $("#cycleErr").show();
+            $("#cycleErr").html("***Cycle Selection is required");
+            cycleError = false;
+            return false;
+        } else {
+            $("#cycleErr").hide();
+            cycleError = true;
+            return true;
+        }
+    }
+    $("#twowheelErr").hide();
+    let twowheelError = true;
+    $("#twowheel").keyup(function () {
+        validateTwoWheel();
+    });
+    function validateTwoWheel() {
+        let twowheel = $("#twowheel").val();
+        if (twowheel == "") {
+            $("#twowheelErr").show();
+            $("#twowheelErr").html("***Two Wheeler Selection is required");
+            twowheelError = false;
+            return false;
+        } else {
+            $("#twowheelErr").hide();
+            twowheelError = true;
+            return true;
+        }
+    }
+    $("#4wheelErr").hide();
+    let fourwheelError = true;
+    $("#4wheel").keyup(function () {
+        validateFourWheel();
+    });
+    function validateFourWheel() {
+        let fourwheel = $("#4wheel").val();
+        if (fourwheel == "") {
+            $("#4wheelErr").show();
+            $("#4wheelErr").html("***Four Wheeler Selection is required");
+            fourwheelError = false;
+            return false;
+        } else {
+            $("#4wheelErr").hide();
+            fourwheelError = true;
+            return true;
+        }
+    }
+    $("#incomeErr").hide();
+    let incomeError = true;
+    $("#income").keyup(function () {
+        validateIncome();
+    });
+    function validateIncome() {
+        let income = $("#income").val();
+        if (income == "") {
+            $("#incomeErr").show();
+            $("#incomeErr").html("***Income is required");
+            incomeError = false;
+            return false;
+        } else {
+            $("#incomeErr").hide();
+            incomeError = true;
+            return true;
+        }
+    }
+    $("#annIncomeErr").hide();
+    let annIncomeError = true;
+    $("#annIncome").keyup(function () {
+        validateAnnIncome();
+    });
+    function validateAnnIncome() {
+        let annIncome = $("#annIncome").val().trim();
+        if (annIncome == "") {
+            $("#annIncomeErr").show();
+            $("#annIncomeErr").html("***Annual Income is required");
+            annIncomeError = false;
+            return false;
+        } else if (!$.isNumeric(annIncome)) {
+            $("#annIncomeErr").show();
+            $("#annIncomeErr").html(
+                "***Annual Income should be a valid number"
+            );
+            annIncomeError = false;
+            return false;
+        } else if (parseFloat(annIncome) < 0) {
+            $("#annIncomeErr").show();
+            $("#annIncomeErr").html(
+                "***Annual Income should be a non-negative number"
+            );
+            annIncomeError = false;
+            return false;
+        } else {
+            $("#annIncomeErr").hide();
+            annIncomeError = true;
+            return true;
+        }
+    }
     $("#submit").click(function () {
         validateName();
         validateVillage();
@@ -376,6 +610,17 @@ $(document).ready(function () {
         validateReligion();
         validateCast();
         validateSubcast();
+        validateMarry();
+        validateFamily();
+        validateRcType();
+        validateAadhar();
+        validateAgr();
+        validatePlot();
+        validateCycle();
+        validateTwoWheel();
+        validateFourWheel();
+        validateIncome();
+        validateAnnIncome();
         if (
             nameError == true &&
             villageError == true &&
@@ -388,7 +633,18 @@ $(document).ready(function () {
             jobError == true &&
             relError == true &&
             castError == true &&
-            subcastError == true
+            subcastError == true &&
+            marryError == true &&
+            famError == true &&
+            rcTypeError == true &&
+            aadharError == true &&
+            agrError == true &&
+            plotError == true &&
+            cycleError == true &&
+            twowheelError == true &&
+            fourwheelError == true &&
+            incomeError == true &&
+            annIncomeError == true
         ) {
             var route = $("#routeToContact").data("route");
             const name = $("#name").val();
@@ -403,6 +659,17 @@ $(document).ready(function () {
             const rel = $("#rel").val();
             const cast = $("#cast").val();
             const subcast = $("#subcast").val();
+            const marry = $("#marry").val();
+            const fam = $("#fam").val();
+            const rcType = $("#rcType").val();
+            const aadhar = $("#aadhar").val();
+            const agr = $("#agr").val();
+            const plot = $("#plot").val();
+            const cycle = $("#cycle").val();
+            const twowheel = $("#twowheel").val();
+            const fourwheel = $("#4wheel").val();
+            const income = $("#income").val();
+            const annIncome = $("#annIncome").val();
             const formData = {
                 name: name,
                 village: village,
@@ -416,6 +683,17 @@ $(document).ready(function () {
                 rel: rel,
                 cast: cast,
                 subcast: subcast,
+                marry: marry,
+                fam: fam,
+                rcType: rcType,
+                aadhar: aadhar,
+                agr: agr,
+                plot: plot,
+                cycle: cycle,
+                twowheel: twowheel,
+                fourwheel: fourwheel,
+                income: income,
+                annIncome: annIncome,
             };
             $.ajax({
                 type: "POST",

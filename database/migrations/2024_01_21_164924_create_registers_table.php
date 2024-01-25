@@ -27,6 +27,17 @@ return new class extends Migration
             $table->string('religion');
             $table->string('cast');
             $table->string('sub_cast');
+            $table->string('maritalStatus');
+            $table->integer('familyMember');
+            $table->string('rationCard');
+            $table->string('aadharNumber');
+            $table->string('agriculture');
+            $table->string('plot');
+            $table->string('cycle');
+            $table->string('twoWheeler');
+            $table->string('fourWheeler');
+            $table->string('incomeSource');
+            $table->bigInteger('familyAnnualIncome');
             $table->timestamps();
         });
     }

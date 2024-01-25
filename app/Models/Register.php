@@ -10,6 +10,29 @@ class Register extends Model
     use HasFactory;
 
     protected $fillable = [
-        "name","village","tehsil","district","state","date_of_birth","blood_group","education","job","religion","cast","sub_cast"
-        ];
+        "name",
+        "village",
+        "tehsil",
+        "district",
+        "state",
+        "date_of_birth",
+        "blood_group",
+        "education",
+        "job",
+        "religion",
+        "cast",
+        "sub_cast",
+        "maritalStatus",
+        "familyMember",
+        "rationCard",
+        "aadharNumber",
+        "agriculture",
+        "plot",
+        "cycle",
+        "cycle",
+        "twoWheeler",
+        "fourWheeler",
+        "incomeSource",
+        "familyAnnualIncome"
+    ];
 }

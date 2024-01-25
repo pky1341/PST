@@ -25,7 +25,19 @@ class PSTController extends Controller
             'job' => $req->job,
             'religion' => $req->rel,
             'cast' => $req->cast,
-            'sub_cast' => $req->subcast
+            'sub_cast' => $req->subcast,
+            'maritalStatus' => $req->marry,
+            'familyMember' => $req->fam,
+            'rationCard' => $req->rcType,
+            'aadharNumber' => $req->aadhar,
+            'agriculture' => $req->agr,
+            'plot' => $req->plot,
+            'cycle' => $req->cycle,
+            'twoWheeler' => $req->twowheel,
+            'fourWheeler' => $req->fourwheel,
+            'incomeSource' => $req->income,
+            'familyAnnualIncome' => $req->annIncome,
+
         ]);
 
         return response()->json(['success' => 'User created successfully.']);
