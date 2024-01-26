@@ -12,6 +12,17 @@ $(document).ready(function () {
         $("#rel").val("");
         $("#cast").val("");
         $("#subcast").val("");
+        $("#marry").val("");
+        $("#fam").val("");
+        $("#rcType").val("");
+        $("#aadhar").val("");
+        $("#agr").val("");
+        $("#plot").val("");
+        $("#cycle").val("");
+        $("#twowheel").val("");
+        $("#4wheel").val("");
+        $("#income").val("");
+        $("#annIncome").val("");
     });
 
     var pattern = /^[a-zA-Z\s]+$/;
