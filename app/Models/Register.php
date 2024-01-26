@@ -29,7 +29,6 @@ class Register extends Model
         "agriculture",
         "plot",
         "cycle",
-        "cycle",
         "twoWheeler",
         "fourWheeler",
         "incomeSource",
